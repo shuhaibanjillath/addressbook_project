@@ -1,0 +1,30 @@
+#ifndef CONTACT_H
+#define CONTACT_H
+
+#define MAX_CONTACTS 100
+
+typedef struct {
+    char name[50];
+    char phone[20];
+    char email[50];
+} Contact;
+
+typedef struct {
+    Contact contacts[100];
+    int contactCount;
+} AddressBook;
+
+void createContact(AddressBook *addressBook);
+int searchContact(AddressBook *addressBook);
+void editContact(AddressBook *addressBook);
+void deleteContact(AddressBook *addressBook);
+void listContacts(AddressBook *addressBook, int sortCriteria);
+void initialize(AddressBook *addressBook);
+void saveAndExit(AddressBook *addressBook);
+int valid_num(char *phone);
+int unique_num(char *phone,AddressBook *addressBook);
+int valid_name(char *name);
+int valid_email(char *email);
+int unique_email(char *email,AddressBook *addressBook);
+
+#endif
